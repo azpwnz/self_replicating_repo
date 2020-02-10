@@ -21,7 +21,7 @@ FILES = [
     'Procfile',
     '.gitignore',
     'installation_doc.md',
-    'tech_specificaiton.md',
+    'tech_specification.md',
     'README.md',
     'app/templates/base.html',
     'app/templates/index.html',
