@@ -14,6 +14,7 @@ app.config['GITHUB_CLIENT_SECRET'] = os.environ['GITHUB_CLIENT_SECRET']
 GITHUB_API_URL = 'https://api.github.com/'
 # We may ask user to choose the name if needed
 NEW_REPO_NAME = 'az_self_replicating_repo'
+NEW_REPO_DESC = 'This app allows replicating its own code into user\'s Github repository.'
 
 FILES = [
     'self_replicating.py',
@@ -53,7 +54,7 @@ def replicate(token):
 
     # Create new repo
     url = '{}user/repos'.format(GITHUB_API_URL)
-    response = requests.post(url, headers=headers, json={'name': NEW_REPO_NAME})
+    response = requests.post(url, headers=headers, json={'name': NEW_REPO_NAME, 'description': NEW_REPO_DESC})
 
     if response.status_code != 200 and 'errors' in response.json():
         return render_template('error.html', errors=response.json()['errors'])
