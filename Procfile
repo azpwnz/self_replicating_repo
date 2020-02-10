@@ -1,0 +1,1 @@
+web: gunicorn self_replicating:app

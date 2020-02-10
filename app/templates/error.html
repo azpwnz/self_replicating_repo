@@ -1,0 +1,10 @@
+{% block body %}
+    <div style="text-align: center; font-family: sans-serif;">
+        <h3>We're unable to replicate app's repository due to the following errors</h3>
+        {% for error in errors %}
+            {{ error['resource'] }}: {{ error['message'] }}
+        {% endfor %}
+        <br>
+        <p>You may try to fix them and try <a href="{{ url_for("index") }}">again</a></p>
+    </div>
+{% endblock %}
